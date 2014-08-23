@@ -227,7 +227,7 @@ module.exports = function (grunt) {
           ],
           '<%= project.themepath %>/typography.css': [
             '<%= project.src %>/components/normalize-css/normalize.css',
-            '<%= project.assets %>/css/typography.unprefixed.css'
+            '<%= project.themepath %>/typography.unprefixed.css'
           ]
         }
       },
