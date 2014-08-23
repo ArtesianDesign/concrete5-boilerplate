@@ -1,6 +1,7 @@
 # Concrete5 FireShell Boilerplate
 
-A boilerplate for building web sites in Concrete5 CMS. Based on FireShell boilerplate
+A boilerplate for building web sites in Concrete5 CMS. Based on [FireShell](http://http://getfireshell.com/).
+
 
 ## Technologies/Requirements
 
@@ -13,10 +14,12 @@ A boilerplate for building web sites in Concrete5 CMS. Based on FireShell boiler
 
 ## Libraries/Vendor Includes
 
-- Based partly on [FireShell](http://http://getfireshell.com/), which includes some elements of [HTML5 Boilerplate](http://html5boilerplate.com/)
-- jQuery 1.10+
+- Based partly on [FireShell](http://http://getfireshell.com/) which includes some elements of [HTML5 Boilerplate](http://html5boilerplate.com/)
 - [Modernizr](http://modernizr.com/) 2.6+
 - [Normalize.css](http://necolas.github.com/normalize.css/)
+- [Bootstrap Grid System](http://getbootstrap.com/css/#grid)
+- jQuery 1.10+
+
 
 ## Documentation
 
@@ -38,10 +41,11 @@ root
 
 
 ## To Do:
-- Add /elements/header_required.php
-  - move Analyitics code into footer?
-- Add /themes/boilerplate/typography.css - generated with grunt from SCSS files
-- put this in a Vagrant box!
+(See Github Issues)  
+
+- Grunt-copy .min files from Bower components?
+- [Consider](https://chrsm.org/2013/04/25/using-grunt-for-php/) grunt-php - or even better:
+- Put it in a Vagrant box!
 
 
 ## License
@@ -49,7 +53,7 @@ root
 #### The MIT License (MIT) 
 
 Theme boilerplate copyright (c) 2013-2014 Artesian Design Inc.
-Other parts copyrighted by their respective owners.
+Other parts copyrighted by their respective authors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

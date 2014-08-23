@@ -12,7 +12,12 @@
 <?php  Loader::element('header_required'); ?>
 
   <link href="<?php  echo $this->getThemePath(); ?>/assets/css/style.min.css" rel="stylesheet">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<?php
+  if ($c->isEditMode()) { ?>
   <link rel="stylesheet" media="screen" type="text/css" href="<?php  echo $this->getStyleSheet('typography.css')?>" />
+<?php } //endif ?>
 
   <script src="<?php  echo $this->getThemePath(); ?>/assets/components/modernizr.js"></script>
 
