@@ -22,6 +22,23 @@ A boilerplate for building web sites in Concrete5 CMS. Based on [FireShell](http
 - jQuery 1.10+
 
 
+## Quick-start
+
+### Simple, static page development:
+- Clone this repo
+- run ``nmp install`` - it may take a while to load all assets
+- run ``grunt`` to start basic web server
+
+### Full MAMP/LAMP development (until we finish Vagrant setup)
+- Make sure you have Apache/PHP/MySQL server running on your machine
+- Follow above quick-start steps
+- Create new MySQL database for Concrete5 CMS
+- Set up server to serve from ``public_html`` directory (try [osx-vhost-manager](https://github.com/jamiemill/osx-vhost-manager/blob/master/vhostman.rb) for quick local virtual host setup)
+- Visit your new virtual host to install Concrete5
+  - (you may need to create ``/files``, ``/packages``, and change permissions of C5-written directories)
+  - You should now see the Concrete5 install screen!
+
+
 ## Documentation
 
 Read the FireShell developer [documentation](//github.com/toddmotto/fireshell/blob/master/docs/DOCS.md) for set up and further learning. You may need to install a few assets before you can get started, such as Node, Git, and Grunt.
