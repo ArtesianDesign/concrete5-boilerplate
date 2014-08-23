@@ -41,11 +41,16 @@ module.exports = function (grunt) {
       src: 'src',
       app: 'public_html',
       theme: 'boilerplate',
-      assets: '<%= project.app %>/theme<%= project.theme %>/assets',
+      themepath: '<%= project.app %>/theme<%= project.theme %>',
+      assets: '<%= project.themepath %>/assets',
       css: [
         '<%= project.src %>/scss/style.scss'
       ],
+      typographycss: [
+        '<%= project.src %>/scss/typography.scss'
+      ],
       js: [
+        '<%= project.src %>/js/plugins/*.js',
         '<%= project.src %>/js/*.js'
       ]
     },
@@ -94,7 +99,9 @@ module.exports = function (grunt) {
     clean: {
       dist: [
         '<%= project.assets %>/css/style.unprefixed.css',
-        '<%= project.assets %>/css/style.prefixed.css'
+        '<%= project.assets %>/css/style.prefixed.css',
+        '<%= project.themepath %>/typography.unprefixed.css',
+        '<%= project.themepath %>/typography.prefixed.css'
       ]
     },
 
@@ -159,7 +166,8 @@ module.exports = function (grunt) {
           banner: '<%= tag.banner %>'
         },
         files: {
-          '<%= project.assets %>/css/style.unprefixed.css': '<%= project.css %>'
+          '<%= project.assets %>/css/style.unprefixed.css': '<%= project.css %>',
+          '<%= project.themepath %>/typography.unprefixed.css': '<%= project.typographycss %>'
         }
       },
       dist: {
@@ -167,7 +175,8 @@ module.exports = function (grunt) {
           style: 'expanded'
         },
         files: {
-          '<%= project.assets %>/css/style.unprefixed.css': '<%= project.css %>'
+          '<%= project.assets %>/css/style.unprefixed.css': '<%= project.css %>',
+          '<%= project.themepath %>/typography.unprefixed.css': '<%= project.typographycss %>'
         }
       }
     },
@@ -190,12 +199,13 @@ module.exports = function (grunt) {
       },
       dev: {
         files: {
-          '<%= project.assets %>/css/style.min.css': ['<%= project.assets %>/css/style.unprefixed.css']
+          '<%= project.assets %>/css/style.prefixed.css': ['<%= project.assets %>/css/style.unprefixed.css']
         }
       },
       dist: {
         files: {
-          '<%= project.assets %>/css/style.prefixed.css': ['<%= project.assets %>/css/style.unprefixed.css']
+          '<%= project.assets %>/css/style.prefixed.css': ['<%= project.assets %>/css/style.unprefixed.css'],
+          '<%= project.assets %>/css/typography.prefixed.css': ['<%= project.assets %>/css/typography.unprefixed.css']
         }
       }
     },
@@ -214,6 +224,10 @@ module.exports = function (grunt) {
           '<%= project.assets %>/css/style.min.css': [
             '<%= project.src %>/components/normalize-css/normalize.css',
             '<%= project.assets %>/css/style.unprefixed.css'
+          ],
+          '<%= project.assets %>/css/typography.css': [
+            '<%= project.src %>/components/normalize-css/normalize.css',
+            '<%= project.assets %>/css/typography.unprefixed.css'
           ]
         }
       },
@@ -225,6 +239,10 @@ module.exports = function (grunt) {
           '<%= project.assets %>/css/style.min.css': [
             '<%= project.src %>/components/normalize-css/normalize.css',
             '<%= project.assets %>/css/style.prefixed.css'
+          ],
+          '<%= project.assets %>/css/typography.css': [
+            '<%= project.src %>/components/normalize-css/normalize.css',
+            '<%= project.assets %>/css/typography.prefixed.css'
           ]
         }
       }
@@ -274,6 +292,7 @@ module.exports = function (grunt) {
         },
         files: [
           '<%= project.app %>/{,*/}*.html',
+          '<%= project.app %>/{,*/}*.php',
           '<%= project.assets %>/css/*.css',
           '<%= project.assets %>/js/{,*/}*.js',
           '<%= project.assets %>/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'

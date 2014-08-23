@@ -3,11 +3,13 @@
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
+
 html {
   font-size: 62.5%;
 }
+
 body {
-  font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
-  background: #fff;
-  color: #444;
+  font: 300 14px/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: $background-color;
+  color: $text-color;
 }
