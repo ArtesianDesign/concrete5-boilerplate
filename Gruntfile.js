@@ -41,7 +41,7 @@ module.exports = function (grunt) {
       src: 'src',
       app: 'public_html',
       theme: 'boilerplate',
-      themepath: '<%= project.app %>/theme<%= project.theme %>',
+      themepath: '<%= project.app %>/themes/<%= project.theme %>',
       assets: '<%= project.themepath %>/assets',
       css: [
         '<%= project.src %>/scss/style.scss'
@@ -85,7 +85,7 @@ module.exports = function (grunt) {
       livereload: {
         options: {
           middleware: function (connect) {
-            return [lrSnippet, mountFolder(connect, 'app')];
+            return [lrSnippet, mountFolder(connect, 'public_html')];
           }
         }
       }
@@ -205,7 +205,7 @@ module.exports = function (grunt) {
       dist: {
         files: {
           '<%= project.assets %>/css/style.prefixed.css': ['<%= project.assets %>/css/style.unprefixed.css'],
-          '<%= project.assets %>/css/typography.prefixed.css': ['<%= project.assets %>/css/typography.unprefixed.css']
+          '<%= project.themepath %>/typography.prefixed.css': ['<%= project.themepath %>/typography.unprefixed.css']
         }
       }
     },
@@ -225,7 +225,7 @@ module.exports = function (grunt) {
             '<%= project.src %>/components/normalize-css/normalize.css',
             '<%= project.assets %>/css/style.unprefixed.css'
           ],
-          '<%= project.assets %>/css/typography.css': [
+          '<%= project.themepath %>/typography.css': [
             '<%= project.src %>/components/normalize-css/normalize.css',
             '<%= project.assets %>/css/typography.unprefixed.css'
           ]
@@ -240,9 +240,9 @@ module.exports = function (grunt) {
             '<%= project.src %>/components/normalize-css/normalize.css',
             '<%= project.assets %>/css/style.prefixed.css'
           ],
-          '<%= project.assets %>/css/typography.css': [
+          '<%= project.themepath %>/typography.css': [
             '<%= project.src %>/components/normalize-css/normalize.css',
-            '<%= project.assets %>/css/typography.prefixed.css'
+            '<%= project.themepath %>/typography.prefixed.css'
           ]
         }
       }

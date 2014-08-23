@@ -1,4 +1,7 @@
+# SublimeText
 sftp-config*.json
+
+# Concrete5 CMS
 concrete/
 public_html/system/
 public_html/system*
@@ -8,11 +11,18 @@ cgi-bin/
 files/
 updates/
 config/site.php
+
+# Caches
 .sass-cache*
 *.sass-cache*
 *.scssc
 .DS_Store
 .tmp
+
+# Misc.
 sitemap.xml
 error_log*
 node_modules
+/src/components
+*.prefixed.css
+*.unprefixed.css
