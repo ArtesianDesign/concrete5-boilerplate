@@ -24,4 +24,3 @@
 </head>
 
 <body>
-<?php $this->inc('_/elements/header.php'); ?>
