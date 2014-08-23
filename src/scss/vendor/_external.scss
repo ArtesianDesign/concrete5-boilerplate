@@ -1,2 +1,5 @@
 // Bootstrap Grids
-@import 'bootstrap/bootstrap-grid';
+// - remove if using the full bootstrap in main styles.scss
+@import 'bootstrap/grid';
+@import 'bootstrap/responsive-embed';
+//@import 'bootstrap/responsive-utilities';

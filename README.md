@@ -6,6 +6,7 @@ A boilerplate for building web sites in Concrete5 CMS. Based on [FireShell](http
 ## Technologies/Requirements
 
 - Concrete5 v.5.6+ (PHP5/MySQL CMS)
+  - PHP 5.4+, MySQL
 - Grunt.js
  	- Gruntfile modified from [FireShell](http://http://getfireshell.com/) (used for JS and SCSS compiling/minification). See [FireShell documentation](//github.com/toddmotto/fireshell/blob/master/docs/DOCS.md)
 - Node/NPM
@@ -23,7 +24,7 @@ A boilerplate for building web sites in Concrete5 CMS. Based on [FireShell](http
 
 ## Documentation
 
-Read the FireShell developer [documentation](//github.com/toddmotto/fireshell/blob/master/docs/DOCS.md) for set up and further learning. You may need to install a few assets before you can get started, such as Node, Git, Grunt.
+Read the FireShell developer [documentation](//github.com/toddmotto/fireshell/blob/master/docs/DOCS.md) for set up and further learning. You may need to install a few assets before you can get started, such as Node, Git, and Grunt.
 
 
 ## Scaffolding

@@ -1,21 +1,37 @@
-@media only screen and (min-width:320px) {
+// See modules/_variables.scss for actual sizes.
+//   - breakpoint variable values based on Bootstrap
+
+@media only screen and ($screen-xs-min - 160) {
+  // Extra small screen / phone portrait
 
 }
-@media only screen and (min-width:480px) {
+
+@media only screen and ($screen-xs-min) {
+  // Extra small screen / phone
 
 }
-@media only screen and (min-width:768px) {
+
+@media only screen and ($screen-sm-min) {
+  // Small screen / tablet
 
 }
-@media only screen and (min-width:1024px) {
+
+@media only screen and ($screen-md-min) {
+  // Medium screen / desktop
 
 }
-@media only screen and (min-width:1140px) {
+
+@media only screen and ($screen-lg-min) {
+  // Large screen / wide desktop
 
 }
-@media only screen and (min-width:1280px) {
+
+@media only screen and ($screen-lg-min + 140) {
+  // Extra Large screen / wide desktop
 
 }
+
 @media print, (-o-min-device-pixel-ratio: 5/4), (-webkit-min-device-pixel-ratio: 1.25), (min-resolution: 120dpi) {
+  // Print-only
 
 }
