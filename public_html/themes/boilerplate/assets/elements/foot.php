@@ -1,7 +1,11 @@
 <?php  defined('C5_EXECUTE') or die("Access Denied."); ?>
 
+  <?php // Most concrete5 blocks use inline jQuery, so we have to load it in the header.
+  /*
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="<?php  echo $this->getThemePath(); ?>/assets/components/jquery.js"><\/script>');</script>
+  */
+  ?>
   <script src="<?php  echo $this->getThemePath(); ?>/assets/js/scripts.min.js"></script>
 
   <?php
