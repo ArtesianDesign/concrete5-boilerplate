@@ -1,1 +1,16 @@
 @include selection($selection-bg: #333, $selection-c: #fff, $selection-ts: none);
+
+.inverse {
+
+  background: $navbar-inverse-bg;
+  color:      $navbar-inverse-color;
+
+  a {
+    color: $navbar-inverse-link-color;
+
+    &:hover, &:active {
+      color: $navbar-inverse-link-hover-color;
+    }
+  }
+
+}

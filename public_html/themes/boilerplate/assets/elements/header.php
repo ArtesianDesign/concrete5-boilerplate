@@ -1,6 +1,6 @@
 <?php  defined('C5_EXECUTE') or die("Access Denied."); ?>
 
-<header class="header" role="banner">
+<header class="header inverse" role="banner">
   <div class="logo">
     <?php
       $sitenameArea = new GlobalArea('Site Name');
