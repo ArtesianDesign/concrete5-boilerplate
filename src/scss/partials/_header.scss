@@ -1,6 +1,28 @@
 .header {
 
+  color: $navbar-inverse-color;
+  background: $navbar-inverse-bg;
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: auto;
+    height: auto;
+  }
+
 }
+
 .logo {
+
+}
+
+.header-image {
+
+  img {
+    display: block;
+    width: 100%;
+    max-width: auto;
+    height: auto;
+  }
 
 }

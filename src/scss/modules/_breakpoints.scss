@@ -1,32 +1,32 @@
 // See modules/_variables.scss for actual sizes.
 //   - breakpoint variable values based on Bootstrap
 
-@media only screen and ($screen-xs-min - 160) {
+@media only screen and (min-width: $screen-xs-min - 160) {
   // Extra small screen / phone portrait
 
 }
 
-@media only screen and ($screen-xs-min) {
+@media only screen and (min-width: $screen-xs-min) {
   // Extra small screen / phone
 
 }
 
-@media only screen and ($screen-sm-min) {
+@media only screen and (min-width: $screen-sm-min) {
   // Small screen / tablet
 
 }
 
-@media only screen and ($screen-md-min) {
+@media only screen and (min-width: $screen-md-min) {
   // Medium screen / desktop
 
 }
 
-@media only screen and ($screen-lg-min) {
+@media only screen and (min-width: $screen-lg-min) {
   // Large screen / wide desktop
 
 }
 
-@media only screen and ($screen-lg-min + 140) {
+@media only screen and (min-width: $screen-lg-min + 140) {
   // Extra Large screen / wide desktop
 
 }

@@ -1,14 +1,109 @@
-.nav {
+// Main navigation:
 
-  ul {
+$mobile-nav-width: 20rem;
+
+.nav-container {
+
+  ul.nav {
+    display: none;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 200%;
+    top: 0;
+    height: 100%;
+    width: $mobile-nav-width;
+    background: darken($navbar-inverse-bg, 10%);
+    transition: all .5s ease;
+
+    & > li {
+      display: block;
+
+      a {
+        padding: .75em 1.5em;
+      }
+    }
   }
 
   li {
 
+    a {
+      display: block;
+      padding: 1em;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
-  a {
+  //.nav-toggle {
 
+
+    label {
+      display: block;
+      padding: 0 .5em;
+      position: absolute;
+      font-size: 2.25em;
+      color: $navbar-inverse-color;
+      right: 0;
+      background: darken($navbar-inverse-bg, 10%);
+
+      i {
+       color: $navbar-inverse-color;
+      }
+    }
+
+    input[type=checkbox]{
+        display: none;
+    }
+
+    input[type=checkbox]:checked ~ ul.nav {
+        display: block;
+        outline: 0;
+        border: 0;
+        right: 0;
+    }
+
+    input[type=checkbox]:checked ~ label {
+      right: $mobile-nav-width;
+    }
+
+  //}
+
+}
+
+// Breakpoints
+
+@media only screen and (min-width: $screen-sm-min) {
+  // Small screen / tablet
+
+  .nav-container {
+    display: block;
+
+    ul.nav {
+      position: initial;
+      right: initial;
+      display: inline-block;
+      float: left;
+      height: auto;
+      width: auto;
+      background: $navbar-inverse-bg;
+
+      & > li {
+        display: inline-block;
+        float: left;
+
+        a {
+          padding: 2.5em 1em;
+        }
+      }
+    }
+
+    label, input[type=checkbox] {
+      display: none;
+    }
   }
+
 }
