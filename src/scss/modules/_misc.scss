@@ -2,14 +2,30 @@
 
 .inverse {
 
-  background: $navbar-inverse-bg;
   color:      $navbar-inverse-color;
+  background: $navbar-inverse-bg;
+
+  h1, h2, h3 {
+    color: #fff;
+  }
 
   a {
     color: $navbar-inverse-link-color;
 
     &:hover, &:active {
       color: $navbar-inverse-link-hover-color;
+    }
+  }
+
+  &.secondary-color {
+    color: lighten($secondary-color, 60%);
+    background: $secondary-color;
+
+    a {
+      color: #fff;
+      &:hover {
+
+      }
     }
   }
 

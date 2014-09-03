@@ -1,4 +1,11 @@
-<?php  defined('C5_EXECUTE') or die("Access Denied."); ?><!doctype html>
+<?php  defined('C5_EXECUTE') or die("Access Denied.");
+
+$th = Loader::helper('text');
+
+$page_handle = ($pt = $c->getCollectionTypeHandle()) ? $pt : 'view';
+$page_name = $th->urlify($c->getCollectionName());
+
+?><!doctype html>
 <html class="no-js">
 <head>
 
@@ -17,4 +24,4 @@
 
 </head>
 
-<body>
+<body class="pt-<?php echo $page_handle; ?> <?php echo $page_name; ?>">

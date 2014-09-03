@@ -1,7 +1,9 @@
 .header {
 
-  color: $navbar-inverse-color;
-  background: $navbar-inverse-bg;
+  &.inverse {
+    color: $navbar-inverse-color;
+    background: $navbar-inverse-bg;
+  }
 
   img {
     display: block;
