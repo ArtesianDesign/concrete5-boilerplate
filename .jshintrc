@@ -21,6 +21,7 @@
   "smarttabs": true,
   "globals" : {
     "jQuery": true,
-    "Modernizr": true
+    "Modernizr": true,
+    "WebFontConfig": true
   }
 }

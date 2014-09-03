@@ -5,6 +5,7 @@ sftp-config*.json
 public_html/config/site.php
 concrete/
 public_html/system
+public_html/files
 concrete5.6.1.2/
 concrete5.6.2.1/
 cgi-bin/
