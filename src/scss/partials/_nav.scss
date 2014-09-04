@@ -1,113 +1,261 @@
-// Main navigation:
-
 $mobile-nav-width: 20rem;
 
-.nav-container {
+.navbar.navbar-fixed-top,
+.navbar.navbar-fixed-bottom {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: $zindex-navbar-fixed;
+}
+.navbar-fixed-top {
+  top: 0;
+}
+.navbar-fixed-bottom {
+  bottom: 0;
+}
+
+// Main navigation
+// - mobile-first
+// - non-mobile is further down
+.navbar {
 
   z-index: $zindex-navbar;
+  position: relative;
 
-  ul.nav {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    right: 200%;
+  .navbar-collapse {
+    display: block;
+    position: fixed;
+    right: -$mobile-nav-width;
     top: 0;
     height: 100%;
     width: $mobile-nav-width;
-    background: darken($navbar-inverse-bg, 10%);
-    transition: all .5s ease;
+    border-left: 1px solid darken($navbar-inverse-bg, 12%);
+    background: $navbar-inverse-bg;
+    transition: all .3s ease;
     z-index: $zindex-navbar;
+  }
 
-    & > li {
-      display: block;
+  // Top level Navigation global defaults
+  //
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      position: relative;
+      margin: 0;
+      padding: 0;
 
       a {
-        padding: .75em 1.5em;
+        display: block;
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+.navbar.header {
+  // Top-level Navigation - top-level only
+  //
+  ul.nav {
+    display: block;
+    list-style: none;
+    height: $navbar-height;
+
+    > li {
+      display: block;
+
+      &:hover {
+        background: darken($navbar-inverse-bg, 8%);
+      }
+
+      > a {
+        height: $navbar-height;
+        padding: 1em;
+        line-height: 2;
+        border-bottom: 1px solid darken($navbar-inverse-bg, 8%)
       }
     }
   }
 
   li {
+    // 2nd-level / dropdown
+    //
+    ul {
+      display: none;
+      margin: 0;
+      padding: 0;
+      z-index: $zindex-dropdown;
 
-    a {
-      display: block;
-      padding: 1em;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-
-  //.nav-toggle {
-
-
-    label {
-      display: block;
-      padding: 0 .5em;
-      position: absolute;
-      font-size: 2.25em;
-      color: lighten($navbar-inverse-color, 25%);
-      right: 0;
-      top: 0;
-      background: darken($navbar-inverse-bg, 10%);
-
-      i {
-       color: $navbar-inverse-color;
-      }
-    }
-
-    input[type=checkbox]{
-        display: none;
-    }
-
-    input[type=checkbox]:checked ~ ul.nav {
+      li {
         display: block;
-        outline: 0;
-        border: 0;
-        right: 0;
-    }
+        background-color: darken($navbar-inverse-bg, 5%);
 
-    input[type=checkbox]:checked ~ label {
-      right: $mobile-nav-width;
-    }
-
-  //}
-
-}
-
-// Breakpoints
-
-@media only screen and (min-width: $screen-sm-min) {
-  // Small screen / tablet
-
-  .nav-container {
-    display: block;
-
-    ul.nav {
-      position: initial;
-      right: initial;
-      display: inline-block;
-      float: left;
-      height: auto;
-      width: auto;
-      background: $navbar-inverse-bg;
-
-      & > li {
-        display: inline-block;
-        float: left;
+        &:hover {
+          background: default;
+        }
 
         a {
-          padding: 2.5em 1em;
+          padding: .775em .875em .775em 1.5em;
+          color: lighten($brand-secondary, 55%);
+          border-bottom: 1px solid darken($navbar-inverse-bg, 12%);
         }
       }
     }
 
+    &:hover ul {
+      display: block;
+    }
+  }// end li
+
+  // Mobile nav toggle button
+  //
+  label {
+    display: block;
+    padding: .135em .445em;
+    position: absolute;
+    font-size: 2em;
+    color: lighten($navbar-default-toggle-hover-bg, 65%);
+    right: 0;
+    top: 0;
+    background: $navbar-inverse-toggle-hover-bg;
+    transition: all .3s ease;
+    z-index: $zindex-navbar;
+
+    i {
+     color: lighten($navbar-default-toggle-hover-bg, 65%);
+
+    }
+  }
+
+  input[type=checkbox]{
+      display: none;
+  }
+
+  input[type=checkbox]:checked ~ .navbar-collapse {
+      right: 0;
+  }
+
+  input[type=checkbox]:checked ~ label {
+    right: $mobile-nav-width;
+    outline: 0;
+  }
+}
+
+
+// Breakpoints
+//
+@media only screen and (min-width: $screen-sm-min) {
+  // Tablet and up
+
+  .navbar {
+
+    overflow: visible;
+
+    .navbar-collapse {
+      position: initial;
+      right: initial;
+      display: block;
+      height: auto;
+      width: auto;
+      border-left: 0;
+      font-size: 15px;
+    }
+  }
+
+  .navbar.header {
+
+    // Top-level Navigation - top level only
+    ul.nav {
+      float: left;
+
+      > li {
+        display: inline-block;
+        float: left;
+
+        > a {
+          padding: $nav-link-padding;
+          border: none;
+        }
+      }
+    }
+
+    &.header ul {
+
+      li {
+
+        &:hover {
+
+          // second level / dropdown
+          //
+          ul {
+            position: absolute;
+            top: 99.99%;
+
+            li {
+
+              &:hover {
+                background: darken($navbar-inverse-bg, 10%);
+              }
+
+              a {
+                padding: .5em 1em;
+              }
+            }
+          }
+        }
+
+      }
+    }
+
+    // hide mobile nav toggle for Tablet and up:
     label, input[type=checkbox] {
       display: none;
     }
   }
 
+  // Secondary Header Navigation
+  //
+  .navbar-right {
+    float: right;
+  }
+
+}
+
+
+// Footer navigation
+//
+.footer {
+  .navbar {
+
+    ul.nav {
+
+      margin: 1em 0;
+      font-size: 1.3125em;
+
+      > li {
+        margin-bottom: 1em;
+      }
+
+      li {
+
+        text-align: left;
+
+        //2nd level
+        //
+        ul {
+          display: block;
+          font-size: $font-size-base;
+
+          li {
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }

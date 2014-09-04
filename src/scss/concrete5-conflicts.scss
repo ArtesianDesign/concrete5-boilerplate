@@ -1,0 +1,37 @@
+//----------------------------------*\
+// SCSS MIXINS
+//----------------------------------*/
+
+@import 'mixins/_position.scss';
+@import 'mixins/_selection.scss';
+@import 'vendor/bootstrap/mixins'; // To use the full Bootstrap, change to 'vendor/bootstrap'
+
+//----------------------------------*\
+// CONFIG MODULES
+//----------------------------------*/
+
+// Config modules
+@import 'modules/_variables.scss';
+
+// Sass variables
+$ccm-toolbar-height: 49px;
+
+
+// ----------------------------------
+// Fix Concrete5 conflicts:
+//
+
+.navbar.navbar-fixed-top {
+  top: $ccm-toolbar-height !important;
+}
+
+#ccm-page-controls-wrapper {
+  z-index: $zindex-modal + 100;
+
+  #ccm-toolbar,
+  #ccm-intelligent-search-results,
+  #ccm-dashboard-overlay,
+  #ccm-edit-overlay {
+    z-index: $zindex-modal + 100;
+  }
+}

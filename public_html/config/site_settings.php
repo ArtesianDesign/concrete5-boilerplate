@@ -8,7 +8,7 @@ define('PAGE_TITLE_FORMAT', '%2$s : %1$s');
 //define('FORM_BLOCK_SENDER_EMAIL', 'admin@domain.com');
 
 ## Whitelabeling
-//define('WHITE_LABEL_LOGO_SRC', 'path to logo file')
+define('WHITE_LABEL_LOGO_SRC', 'http://artesiandesigninc.com/logo_menu.png');
 //define('WHITE_LABEL_DASHBOARD_BACKGROUND_SRC','path to background image');
 define('ENABLE_NEWSFLOW_OVERLAY', FALSE);
 define('ENABLE_MARKETPLACE_SUPPORT', FALSE);

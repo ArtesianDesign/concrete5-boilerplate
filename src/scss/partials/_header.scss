@@ -1,10 +1,5 @@
 .header {
 
-  &.inverse {
-    color: $navbar-inverse-color;
-    background: $navbar-inverse-bg;
-  }
-
   img {
     display: block;
     width: 100%;
@@ -12,10 +7,15 @@
     height: auto;
   }
 
+  &.inverse,
+  &.navber-inverse {
+    background-color: $navbar-inverse-bg;
+  }
+
 }
 
-.logo {
-
+.navbar-brand {
+  float: left;
 }
 
 .header-image {

@@ -49,6 +49,9 @@ module.exports = function (grunt) {
       typographycss: [
         '<%= project.src %>/scss/typography.scss'
       ],
+      conflictcss: [
+        '<%= project.src %>/scss/concrete5-conflicts.scss'
+      ],
       js: [
         '<%= project.src %>/js/plugins/*.js',
         '<%= project.src %>/js/*.js'
@@ -101,7 +104,9 @@ module.exports = function (grunt) {
         '<%= project.assets %>/css/style.unprefixed.css',
         '<%= project.assets %>/css/style.prefixed.css',
         '<%= project.themepath %>/typography.unprefixed.css',
-        '<%= project.themepath %>/typography.prefixed.css'
+        '<%= project.themepath %>/typography.prefixed.css',
+        '<%= project.themepath %>/conflictcss.unprefixed.css',
+        '<%= project.themepath %>/conflictcss.prefixed.css'
       ]
     },
 
@@ -167,7 +172,8 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= project.assets %>/css/style.unprefixed.css': '<%= project.css %>',
-          '<%= project.themepath %>/typography.unprefixed.css': '<%= project.typographycss %>'
+          '<%= project.themepath %>/typography.unprefixed.css': '<%= project.typographycss %>',
+          '<%= project.assets %>/css/concrete5-conflicts.min.css': '<%= project.conflictcss %>'
         }
       },
       dist: {
@@ -176,7 +182,8 @@ module.exports = function (grunt) {
         },
         files: {
           '<%= project.assets %>/css/style.unprefixed.css': '<%= project.css %>',
-          '<%= project.themepath %>/typography.unprefixed.css': '<%= project.typographycss %>'
+          '<%= project.themepath %>/typography.unprefixed.css': '<%= project.typographycss %>',
+          '<%= project.assets %>/css/concrete5-conflicts.unprefixed.css': '<%= conflictcss.css %>'
         }
       }
     },
@@ -205,7 +212,8 @@ module.exports = function (grunt) {
       dist: {
         files: {
           '<%= project.assets %>/css/style.prefixed.css': ['<%= project.assets %>/css/style.unprefixed.css'],
-          '<%= project.themepath %>/typography.prefixed.css': ['<%= project.themepath %>/typography.unprefixed.css']
+          '<%= project.themepath %>/typography.prefixed.css': ['<%= project.themepath %>/typography.unprefixed.css'],
+          '<%= project.themepath %>/concrete5-conflicts.prefixed.css': ['<%= project.themepath %>/concrete5-conflicts.unprefixed.css']
         }
       }
     },
@@ -243,6 +251,9 @@ module.exports = function (grunt) {
           '<%= project.themepath %>/typography.css': [
             '<%= project.src %>/components/normalize-css/normalize.css',
             '<%= project.themepath %>/typography.prefixed.css'
+          ],
+          '<%= project.themepath %>/concrete5-conflicts.min.css': [
+            '<%= project.themepath %>/concrete5-conflicts.prefixed.css'
           ]
         }
       }

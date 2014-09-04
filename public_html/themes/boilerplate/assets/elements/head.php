@@ -19,6 +19,12 @@ $page_name = $th->urlify($c->getCollectionName());
 
   <link href="<?php  echo $this->getThemePath(); ?>/assets/css/style.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  <?php
+  $p = new Permissions(Page::getCurrentPage());
+  if ($p->canViewToolbar() || $c->isEditMode()) {
+    echo '<link href="' . $this->getThemePath() . '/assets/css/concrete5-conflicts.min.css" rel="stylesheet">';
+  }
+  ?>
 
   <script src="<?php  echo $this->getThemePath(); ?>/assets/components/modernizr.js"></script>
 
