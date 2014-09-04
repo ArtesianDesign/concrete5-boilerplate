@@ -1,74 +1,161 @@
 <!doctype html>
 <html class="no-js">
 <head>
+
   <meta charset="utf-8">
-  <title>Concrete5 Front-end Boilerplate</title>
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-
   <link href="//www.google-analytics.com" rel="dns-prefetch">
   <link href="//ajax.googleapis.com" rel="dns-prefetch">
-  <link href="themes/boilerplate/assets/css/style.min.css" rel="stylesheet">
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <title>Home : Concrete5 Boilerplate</title>
+  <meta name="description" content="" />
+
+  <link rel="stylesheet" type="text/css" href="/system/css/ccm.base.css" />
+  <script type="text/javascript" src="/system/js/jquery.js"></script>
+  <script type="text/javascript" src="/system/js/ccm.base.js"></script>
+  <link rel="stylesheet" type="text/css" href="/system/blocks/search/view.css" />
+
+  <link href="/themes/boilerplate/assets/css/style.min.css" rel="stylesheet">
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 
-  <script src="themes/boilerplate/assets/components/modernizr.js"></script>
-
+  <script src="/themes/boilerplate/assets/components/modernizr.js"></script>
 </head>
-<body>
 
-<header class="header" role="banner">
-  <div class="container">
-    <div class="logo">
-      <a href="/">Concrete5 Boilerplate
-      </a>
-    </div>
-    <nav class="nav-container" role="navigation">
+<body class="pt-right_sidebar home">
+
+  <header class="header navbar navbar-default navbar-fixed-top inverse navbar-inverse" role="banner" id="top">
+    <div class="container">
+      <div class="navbar-brand logo">
+        <div><a title="Home" href="/">Concrete5 Boilerplate</a>
+        </div>
+      </div>
+
       <input type="checkbox" id="nav-toggle-button" role="button">
-      <label for="nav-toggle-button" class="nav-toggle-label"><i class="fa fa-bars"></i></label>
-      <ul class="nav">
-        <li>
-          <a href="/">Home</a>
-        </li>
-        <li>
-          <a href="/">About</a>
-        </li>
-        <li>
-          <a href="/">Services</a>
-        </li>
-        <li>
-          <a href="/">Contact</a>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
+      <label for="nav-toggle-button" class="nav-toggle-label"><i class="fa fa-bars"></i>
+      </label>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8">
-        <main class="main" role="main">
-          <h1><i class="fa fa-cogs"></i> Front-end boilerplate for Concrete5 CMS</h1>
-          <p>Start a new Concrete5 site from scratch. Use Bower, Grunt, Sass, jsHint, etc to build out a theme, custom templates, packages, etc.</p>
-        </main>
-      </div>
+      <div class="nav-container navbar-collapse collapse in" id="navbar-main" role="navigation">
+        <ul class="nav navbar-nav">
+          <li class="nav-selected nav-path-selected nav-first nav-home"><a href="/" target="_self" class="nav-selected nav-path-selected nav-first nav-home">Home</a>
+          </li>
+          <li class="dropdown"><a href="/index.php/about/" target="_self" class="dropdown">About</a>
+            <ul>
+              <li class="nav-first"><a href="/index.php/about/guestbook/" target="_self" class="nav-first">Guestbook</a>
+              </li>
+              <li class="nav-last"><a href="/index.php/about/contact-us/" target="_self" class="nav-last">Contact Us</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="/index.php/blog/" target="_self" class="dropdown">Blog</a>
+            <ul>
+              <li class="nav-first nav-last"><a href="/index.php/blog/hello-world/" target="_self" class="nav-first nav-last">Hello World</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-last"><a href="/index.php/search/" target="_self" class="nav-last">Search</a>
+          </li>
+        </ul>
 
-      <div class="col-sm-4">
-        <aside class="sidebar" role="complementary">
-          Sidebar
-        </aside>
+        <div class="navbar-right">
+
+          <form action="/search/" method="get" class="ccm-search-block-form search-form">
+            <input name="search_paths[]" type="hidden" value="" />
+            <i class="fa fa-search"></i>
+            <input name="query" type="text" value="" class="ccm-search-block-text" />
+            <input name="submit" type="submit" value="Search" class="ccm-search-block-submit" />
+          </form>
+        </div>
       </div>
     </div>
+
+  </header>
+
+  <div id="page-content">
+    <div class="header-image inverse">
+      <img border="0" class="ccm-image-block" alt="" src="/files/8714/0882/9656/england_village.jpg" width="960" height="212" />
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <main class="main" role="main">
+            <h1><i class="fa fa-cogs"></i> Front-end boilerplate for Concrete5 CMS</h1>
+            <p>Start a new Concrete5 site from scratch. Use Bower, Grunt, Sass, jsHint, etc to build out a theme, custom templates, packages, etc.</p>
+            <h2>Welcome to concrete5 boilerplate!</h2>
+            <p>Content Management is easy with concrete5's in-context editing. Just <a href="/login/">login</a> and you can change things as you browse your site.</p>
+            <p>You can watch videos and learn how to:</p>
+            <ul>
+              <li><a title="In-context editing CMS" href="http://www.concrete5.org/documentation/general-topics/in-context-editing/" target="_blank">Edit</a>&nbsp;this page.</li>
+              <li>Add a <a title="Add a page in concrete5" href="http://www.concrete5.org/documentation/general-topics/add-a-page/" target="_blank">new page</a>.</li>
+              <li>Add some basic functionality, like&nbsp;<a title="Add a simple form in concrete5" href="http://www.concrete5.org/documentation/general-topics/add_a_form" target="_blank">a Form</a>.</li>
+              <li><a title="add-on marketplace for concrete5" href="http://www.concrete5.org/marketplace/how_to_install_add_ons_and_themes_/" target="_blank">Finding &amp; adding</a>&nbsp;more functionality and themes.</li>
+            </ul>
+            <p>We've taken the liberty to build out the rest of this site with some sample content that will help you learn concrete5. Wander around a bit, or click Dashboard to get to the&nbsp;<a href="/dashboard/sitemap/">Sitemap</a> and quickly delete the parts you don't want.</p>
+            <h1>Heading 1</h1>
+            <h2>Heading 2</h2>
+            <h3>Heading 3</h3>
+            <h4>Heading 4</h4>
+            <h5>Heading 5</h5>
+            <h6>Heading 6</h6>
+            <p>This is a line of paragraph text. This is a line of paragraph text. This is a line of paragraph text. This is a line of paragraph text.</p>
+            <address>This is an address
+              <br />1234 Street Name
+              <br />City, State, 12345</address>
+            <p>That's all, folks!</p>
+          </main>
+        </div>
+
+        <div class="col-sm-4">
+          <aside class="sidebar" role="complementary">
+            <h3>Sidebar</h3>
+            <p>Everything about concrete5 is completely customizable through the CMS. This is a separate area from the main content on the homepage. You can&nbsp;<a title="Move blocks in concrete5" href="http://www.concrete5.org/documentation/general-topics/blocks-and-areas" target="_blank">drag and drop blocks</a>&nbsp;like this around your layout.</p>
+          </aside>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer inverse" role="contentinfo">
+
+      <div class="navbar navbar-footer">
+        <div class="container">
+          <ul class="nav navbar-nav navbar-footer row">
+            <li class="col-sm-2 col-lg-1 nav-selected nav-path-selected nav-first nav-home"><a href="/" target="_self" class="nav-selected nav-path-selected nav-first nav-home">Home</a>
+            </li>
+            <li class="col-sm-2 col-lg-1 dropdown"><a href="/index.php/about/" target="_self" class="dropdown">About</a>
+              <ul>
+                <li class="nav-first"><a href="/index.php/about/guestbook/" target="_self" class="nav-first">Guestbook</a>
+                </li>
+                <li class="nav-last"><a href="/index.php/about/contact-us/" target="_self" class="nav-last">Contact Us</a>
+                </li>
+              </ul>
+            </li>
+            <li class="col-sm-2 col-lg-1 dropdown"><a href="/index.php/blog/" target="_self" class="dropdown">Blog</a>
+              <ul>
+                <li class="nav-first nav-last"><a href="/index.php/blog/hello-world/" target="_self" class="nav-first nav-last">Hello World</a>
+                </li>
+              </ul>
+            </li>
+            <li class="col-sm-2 col-lg-1 nav-last"><a href="/index.php/search/" target="_self" class="nav-last">Search</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row">
+          <div class="container">
+            <p class="footer-copyright">&copy;2014 Concrete5 Boilerplate. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
   </div>
 
-  <footer class="footer" role="contentinfo">
-    Footer
-  </footer>
 
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="themes/boilerplate/assets/components/jquery.js"><\/script>');</script>
-  <script src="themes/boilerplate/assets/js/scripts.min.js"></script>
+  <script src="/themes/boilerplate/assets/js/scripts.min.js"></script>
 
   <script>
   (function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
