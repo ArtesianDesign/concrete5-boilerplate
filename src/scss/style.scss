@@ -41,6 +41,15 @@
 @import 'modules/_print.scss';
 
 //----------------------------------*\
+// BOOTSTRAP
+//----------------------------------*/
+@import '../components/bootstrap-sass-official/assets/stylesheets/bootstrap/grid';
+@import '../components/bootstrap-sass-official/assets/stylesheets/bootstrap/responsive-embed';
+@import '../components/bootstrap-sass-official/assets/stylesheets/bootstrap/forms';
+@import '../components/bootstrap-sass-official/assets/stylesheets/bootstrap/buttons';
+
+
+//----------------------------------*\
 // VENDOR
 //----------------------------------*/
 

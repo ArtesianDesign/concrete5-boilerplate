@@ -4,7 +4,7 @@
   <?php echo $error?>
 <?php } ?>
 
-<form action="<?php echo $this->url( $resultTargetURL )?>" method="get" class="ccm-search-block-form search-form">
+<form action="<?php echo $this->url( $resultTargetURL )?>" method="get" class="ccm-search-block-form navbar-form search-form">
 
   <?php /*if( strlen($title)>0){ ?><h3><?php echo $title?></h3><?php } */ ?>
 
@@ -16,9 +16,9 @@
   <?php  }
   } ?>
 
-  <i class="fa fa-search"></i>
+  <button type="submit" class="btn btn-submit submit"><i class="fa fa-search"></i></button>
 
-  <input name="query" type="text" value="<?php echo htmlentities($query, ENT_COMPAT, APP_CHARSET)?>" class="ccm-search-block-text" />
+  <input name="query" type="text" class="ccm-search-block-text form-control search-input" placeholder="search" value="<?php echo htmlentities($query, ENT_COMPAT, APP_CHARSET)?>" />
 
   <input name="submit" type="submit" value="<?php echo $buttonText?>" class="ccm-search-block-submit" />
 

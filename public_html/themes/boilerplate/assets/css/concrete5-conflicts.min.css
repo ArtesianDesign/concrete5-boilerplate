@@ -2,10 +2,19 @@
  * c5bp
  * Concrete5 Front-end Boilerplate
  * http://getfireshell.com
- * @author Todd Motto, Daniel Peterson
- * @version 1.1.0
+ * @author Daniel Peterson
+ * @version 0.8.0
  * Copyright 2014. MIT licensed.
  */
+
+#ccm-page-controls-wrapper,
+.ccm-ui,
+.ccm-ui input,
+.ccm-ui textarea,
+.ccm-ui select,
+.ccm-ui .uneditable-input {
+  box-sizing: content-box !important;
+}
 
 .navbar.navbar-fixed-top {
   top: 49px !important;

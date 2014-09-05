@@ -1,6 +1,6 @@
 # Concrete5 FireShell Boilerplate
 
-A boilerplate for building web sites in Concrete5 CMS. Based on [FireShell](http://http://getfireshell.com/).
+A boilerplate for building web sites in Concrete5 CMS. Based on [FireShell](http://http://getfireshell.com/) with some elements of [Bootstrap](http://getbootstrap.com/).
 
 
 ## Technologies/Requirements
@@ -9,9 +9,9 @@ A boilerplate for building web sites in Concrete5 CMS. Based on [FireShell](http
   - PHP 5.4+, MySQL
 - Grunt.js
  	- Gruntfile modified from [FireShell](http://http://getfireshell.com/) (used for JS and SCSS compiling/minification). See [FireShell documentation](//github.com/toddmotto/fireshell/blob/master/docs/DOCS.md)
-- Node/NPM
-- Bower
-- Sass/SCSS
+  - Node/NPM
+  - Bower
+  - Sass/SCSS
 
 ## Libraries/Vendor Includes
 
@@ -49,7 +49,10 @@ Read the FireShell developer [documentation](//github.com/toddmotto/fireshell/bl
 ````
 root  
 ├── public_html  
+│   ├── blocks  
 │   ├── config  
+│   ├── helpers  
+│   ├── packages  
 │   ├── themes  
 │   │   ├──c5boilerplate  
 ├── src  

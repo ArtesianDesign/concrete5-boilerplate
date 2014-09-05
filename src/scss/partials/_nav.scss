@@ -18,9 +18,8 @@ $mobile-nav-width: 20rem;
 // - mobile-first
 // - non-mobile is further down
 .navbar {
-
-  z-index: $zindex-navbar;
   position: relative;
+  z-index: $zindex-navbar;
 
   .navbar-collapse {
     display: block;
@@ -59,12 +58,13 @@ $mobile-nav-width: 20rem;
 }
 
 .navbar.header {
+  height: $navbar-height;
+
   // Top-level Navigation - top-level only
   //
   ul.nav {
     display: block;
     list-style: none;
-    height: $navbar-height;
 
     > li {
       display: block;
@@ -153,7 +153,6 @@ $mobile-nav-width: 20rem;
   // Tablet and up
 
   .navbar {
-
     overflow: visible;
 
     .navbar-collapse {
@@ -172,6 +171,7 @@ $mobile-nav-width: 20rem;
     // Top-level Navigation - top level only
     ul.nav {
       float: left;
+      height: $navbar-height;
 
       > li {
         display: inline-block;
@@ -197,6 +197,7 @@ $mobile-nav-width: 20rem;
             top: 99.99%;
 
             li {
+              min-width: 10em;
 
               &:hover {
                 background: darken($navbar-inverse-bg, 10%);
@@ -233,7 +234,6 @@ $mobile-nav-width: 20rem;
   .navbar {
 
     ul.nav {
-
       margin: 1em 0;
       font-size: 1.3125em;
 
@@ -242,7 +242,6 @@ $mobile-nav-width: 20rem;
       }
 
       li {
-
         text-align: left;
 
         //2nd level

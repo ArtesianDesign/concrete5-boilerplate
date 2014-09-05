@@ -9,10 +9,11 @@ defined('C5_EXECUTE') or die(_("Access Denied."));
 	to be the handle of the the Green Salad theme "greensalad"
 */
 
-/*
+$theme_name = 'boilerplate';
+
 $v = View::getInstance();
-$v->setThemeByPath('/login', "boilerplate");
-$v->setThemeByPath('/page_forbidden', "boilerplate");
-$v->setThemeByPath('/page_not_found', "boilerplate");
-$v->setThemeByPath('/register', "boilerplate");
-*/
+$v->setThemeByPath('/login',          $theme_name);
+$v->setThemeByPath('/page_forbidden', $theme_name);
+$v->setThemeByPath('/page_not_found', $theme_name);
+$v->setThemeByPath('/register',       $theme_name);
+

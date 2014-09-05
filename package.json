@@ -2,13 +2,13 @@
   "name": "c5bp",
   "title": "Concrete5 Front-end Boilerplate",
   "url": "http://getfireshell.com",
-  "author": "Todd Motto, Daniel Peterson",
+  "author": "Daniel Peterson",
   "copyright": "2014",
-  "version": "1.1.0",
+  "version": "0.8.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/toddmotto/fireshell.git"
+    "url": "http://github.com/ArtesianDesign/concrete5-boilerplate"
   },
   "devDependencies": {
     "bower": "~1.2.6",
@@ -25,9 +25,13 @@
     "grunt-contrib-clean": "~0.5.0",
     "connect-livereload": "~0.2.0",
     "grunt-open": "~0.2.0",
-    "matchdep": "~0.1.2"
+    "matchdep": "~0.1.2",
+    "grunt-phplint": "~0.0.5"
   },
   "scripts": {
-    "postinstall" : "node_modules/.bin/bower install"
+    "postinstall": "node_modules/.bin/bower install"
+  },
+  "dependencies": {
+    "grunt-phplint": "0.0.5"
   }
 }

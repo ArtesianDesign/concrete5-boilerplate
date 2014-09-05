@@ -12,6 +12,30 @@
     background-color: $navbar-inverse-bg;
   }
 
+  .search-form {
+    position: relative;
+    float: right;
+    margin-top: .475em;
+
+    input[type=text] {
+      width: 100%;
+    }
+
+    button,
+    .submit,
+    .btn-submit {
+      position: absolute;
+      right: 0;
+      outline: 0;
+      border: 0;
+      background: transparent none;
+    }
+
+    .ccm-search-block-submit {
+      display: none;
+    }
+  }
+
 }
 
 .navbar-brand {

@@ -55,6 +55,16 @@ module.exports = function (grunt) {
       js: [
         '<%= project.src %>/js/plugins/*.js',
         '<%= project.src %>/js/*.js'
+      ],
+      php: [
+        '<%= project.app %>/blocks/**/*.php',
+        '<%= project.app %>/config/*.php',
+        '<%= project.app %>/controllers/**/*.php',
+        '<%= project.app %>/helpers/**/*.php',
+        '<%= project.app %>/models/**/*.php',
+        '<%= project.app %>/packages/**/*.php',
+        '<%= project.app %>/themes/**/*.php',
+        '<%= project.app %>/tools/**/*.php'
       ]
     },
 
@@ -92,6 +102,21 @@ module.exports = function (grunt) {
           }
         }
       }
+    },
+
+    phplint: {
+      options: {
+        swapPath: './'
+      },
+      all: '<%= project.php %>'
+    },
+
+    php: {
+      files: '<%= project.php %>',
+      tasks: ['phplint']
+      // options: {
+      //   livereload: 35722,
+      // },
     },
 
     /**
@@ -297,6 +322,14 @@ module.exports = function (grunt) {
         files: '<%= project.src %>/scss/{,*/}*.{scss,sass}',
         tasks: ['sass:dev', 'cssmin:dev', 'autoprefixer:dev']
       },
+      phplint: {
+        files: '<%= project.php %>'
+      },
+      // Add this to lint changed PHP files. BEWARE: high CPU usage
+      // php: {
+      //   files: 'public_html/**/*.php',
+      //   tasks: ['phplint']
+      // },
       livereload: {
         options: {
           livereload: LIVERELOAD_PORT
@@ -323,6 +356,7 @@ module.exports = function (grunt) {
     'cssmin:dev',
     'jshint',
     'concat:dev',
+    'phplint:all',
     'connect:livereload',
     'open',
     'watch'
@@ -339,6 +373,7 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'cssmin:dist',
     'clean:dist',
+    'phplint:all',
     'jshint',
     'uglify'
   ]);

@@ -21,6 +21,15 @@ $ccm-toolbar-height: 49px;
 // Fix Concrete5 conflicts:
 //
 
+#ccm-page-controls-wrapper,
+.ccm-ui,
+.ccm-ui input,
+.ccm-ui textarea,
+.ccm-ui select,
+.ccm-ui .uneditable-input {
+  box-sizing: content-box !important;
+}
+
 .navbar.navbar-fixed-top {
   top: $ccm-toolbar-height !important;
 }
