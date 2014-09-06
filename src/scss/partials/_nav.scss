@@ -7,12 +7,33 @@ $mobile-nav-width: 20rem;
   left: 0;
   z-index: $zindex-navbar-fixed;
 }
+
 .navbar-fixed-top {
   top: 0;
 }
+
 .navbar-fixed-bottom {
   bottom: 0;
 }
+
+
+// Global nav reset
+//
+ul.nav {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    margin: 0;
+    padding: 0;
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+  }
+}
+
 
 // Main navigation
 // - mobile-first
@@ -22,15 +43,15 @@ $mobile-nav-width: 20rem;
   z-index: $zindex-navbar;
 
   .navbar-collapse {
+    background: $navbar-inverse-bg;
+    border-left: 1px solid darken($navbar-inverse-bg, 12%);
     display: block;
+    height: 100%;
     position: fixed;
     right: -$mobile-nav-width;
     top: 0;
-    height: 100%;
-    width: $mobile-nav-width;
-    border-left: 1px solid darken($navbar-inverse-bg, 12%);
-    background: $navbar-inverse-bg;
     transition: all .3s ease;
+    width: $mobile-nav-width;
     z-index: $zindex-navbar;
   }
 
@@ -42,9 +63,9 @@ $mobile-nav-width: 20rem;
     padding: 0;
 
     li {
-      position: relative;
       margin: 0;
       padding: 0;
+      position: relative;
 
       a {
         display: block;
@@ -55,96 +76,98 @@ $mobile-nav-width: 20rem;
       }
     }
   }
-}
 
-.navbar.header {
-  height: $navbar-height;
+  .header {
+    height: $navbar-height;
 
-  // Top-level Navigation - top-level only
-  //
-  ul.nav {
-    display: block;
-    list-style: none;
-
-    > li {
-      display: block;
-
-      &:hover {
-        background: darken($navbar-inverse-bg, 8%);
-      }
-
-      > a {
-        height: $navbar-height;
-        padding: 1em;
-        line-height: 2;
-        border-bottom: 1px solid darken($navbar-inverse-bg, 8%)
-      }
-    }
-  }
-
-  li {
-    // 2nd-level / dropdown
+    // Top-level Navigation - top-level only
     //
-    ul {
-      display: none;
-      margin: 0;
-      padding: 0;
-      z-index: $zindex-dropdown;
+    ul.nav {
+      display: block;
+      list-style: none;
 
-      li {
+      > li {
         display: block;
-        background-color: darken($navbar-inverse-bg, 5%);
 
         &:hover {
-          background: default;
+          background: darken($navbar-inverse-bg, 8%);
         }
 
-        a {
-          padding: .775em .875em .775em 1.5em;
-          color: lighten($brand-secondary, 55%);
-          border-bottom: 1px solid darken($navbar-inverse-bg, 12%);
+        > a {
+          border-bottom: 1px solid darken($navbar-inverse-bg, 8%);
+          height: $navbar-height;
+          line-height: 2;
+          padding: 1em;
         }
       }
     }
 
-    &:hover ul {
+    li {
+      // 2nd-level / dropdown
+      //
+      ul {
+        display: none;
+        margin: 0;
+        padding: 0;
+        z-index: $zindex-dropdown;
+
+        li {
+          background-color: darken($navbar-inverse-bg, 5%);
+          display: block;
+
+          &:hover {
+            background: default;
+          }
+
+          a {
+            padding: .775em .875em .775em 1.5em;
+            color: lighten($brand-secondary, 55%);
+            border-bottom: 1px solid darken($navbar-inverse-bg, 12%);
+          }
+        }
+      }
+
+      &:hover ul {
+        display: block;
+      }
+
+    }// end li
+
+    // Mobile nav toggle button
+    //
+    label {
       display: block;
-    }
-  }// end li
-
-  // Mobile nav toggle button
-  //
-  label {
-    display: block;
-    padding: .135em .445em;
-    position: absolute;
-    font-size: 2em;
-    color: lighten($navbar-default-toggle-hover-bg, 65%);
-    right: 0;
-    top: 0;
-    background: $navbar-inverse-toggle-hover-bg;
-    transition: all .3s ease;
-    z-index: $zindex-navbar;
-
-    i {
-     color: lighten($navbar-default-toggle-hover-bg, 65%);
-
-    }
-  }
-
-  input[type=checkbox]{
-      display: none;
-  }
-
-  input[type=checkbox]:checked ~ .navbar-collapse {
+      padding: .135em .445em;
+      position: absolute;
+      font-size: 2em;
+      color: lighten($navbar-default-toggle-hover-bg, 65%);
       right: 0;
+      top: 0;
+      background: $navbar-inverse-toggle-hover-bg;
+      transition: all .3s ease;
+      z-index: $zindex-navbar;
+
+      i {
+       color: lighten($navbar-default-toggle-hover-bg, 65%);
+      }
+    }
+
+    input[type=checkbox] {
+      display: none;
+    }
+
+    input[type=checkbox]:checked ~ .navbar-collapse {
+      right: 0;
+    }
+
+    input[type=checkbox]:checked ~ label {
+      outline: 0;
+      right: $mobile-nav-width;
+    }
   }
 
-  input[type=checkbox]:checked ~ label {
-    right: $mobile-nav-width;
-    outline: 0;
-  }
 }
+
 
 
 // Breakpoints
@@ -179,7 +202,7 @@ $mobile-nav-width: 20rem;
 
         > a {
           padding: $nav-link-padding;
-          border: none;
+          border: 0;
         }
       }
     }
@@ -214,7 +237,8 @@ $mobile-nav-width: 20rem;
     }
 
     // hide mobile nav toggle for Tablet and up:
-    label, input[type=checkbox] {
+    label,
+    input[type=checkbox] {
       display: none;
     }
   }
@@ -234,8 +258,8 @@ $mobile-nav-width: 20rem;
   .navbar {
 
     ul.nav {
-      margin: 1em 0;
       font-size: 1.3125em;
+      margin: 1em 0;
 
       > li {
         margin-bottom: 1em;

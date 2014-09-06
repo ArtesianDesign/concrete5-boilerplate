@@ -48,7 +48,9 @@ while ($questionRow = $questionsRS->fetchRow()) {
     $question['input'] = str_replace('<textarea ', '<textarea class="form-control" ', $question['input']);
   }
 
-  $question['input'] = str_replace('<input ', '<input class="form-control" ', $question['input']);
+  if ($question['type'] != 'checkbox' & $question['type'] != 'radios') {
+    $question['input'] = str_replace('<input ', '<input class="form-control" ', $question['input']);
+  }
 
   $questions[] = $question;
 }

@@ -2,17 +2,20 @@
 
 .inverse {
 
-  color:      $navbar-inverse-color;
+  color: $navbar-inverse-color;
   background: $navbar-inverse-bg;
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     color: #fff;
   }
 
   a {
     color: $navbar-inverse-link-color;
 
-    &:hover, &:active {
+    &:hover,
+    &:active {
       color: $navbar-inverse-link-hover-color;
     }
   }
@@ -23,9 +26,6 @@
 
     a {
       color: #fff;
-      &:hover {
-
-      }
     }
   }
 
