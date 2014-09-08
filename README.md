@@ -1,26 +1,24 @@
 # Concrete5 FireShell Boilerplate
 
-A boilerplate for building web sites in Concrete5 CMS. Based on [FireShell](http://http://getfireshell.com/) with some elements of [Bootstrap](http://getbootstrap.com/).
+A boilerplate for building web sites in Concrete5 CMS. Based on [FireShell](http://http://getfireshell.com/) with option for elements of [Bootstrap](http://getbootstrap.com/). Starts with Bootstrap grid, buttons and forms.
 
 
 ## Technologies/Requirements
 
 - Concrete5 v.5.6+ (PHP5/MySQL CMS)
   - PHP 5.4+, MySQL
-- Grunt.js
- 	- Gruntfile modified from [FireShell](http://http://getfireshell.com/) (used for JS and SCSS compiling/minification). See [FireShell documentation](//github.com/toddmotto/fireshell/blob/master/docs/DOCS.md)
-  - Node/NPM
+- Grunt.js  
+ _(Used for JS and SCSS linting, compiling, and minification. Gruntfile modified from [FireShell](http://http://getfireshell.com/). See [FireShell documentation](//github.com/toddmotto/fireshell/blob/master/docs/DOCS.md))_
+  - Node, NPM
   - Bower
   - Sass/SCSS
 
 ## Libraries/Vendor Includes
 
-- Based partly on [FireShell](http://http://getfireshell.com/) which includes some elements of [HTML5 Boilerplate](http://html5boilerplate.com/)
 - [Modernizr](http://modernizr.com/) 2.6+
 - [Normalize.css](http://necolas.github.com/normalize.css/)
 - [Bootstrap Grid System](http://getbootstrap.com/css/#grid)
-- jQuery 1.10+
-
+- jQuery (Currently concrete5 is loading 1.7.2 - too many issues with existing resources to go newer. After Concrete5.7 release, this will bump to 1.11.0)
 
 ## Quick-start
 
@@ -34,6 +32,8 @@ A boilerplate for building web sites in Concrete5 CMS. Based on [FireShell](http
 - Follow above quick-start steps
 - Create new MySQL database for Concrete5 CMS
 - Set up server to serve from ``public_html`` directory (try [osx-vhost-manager](https://github.com/jamiemill/osx-vhost-manager/blob/master/vhostman.rb) for quick local virtual host setup)
+- create symlink named ``public_html/system`` to concrete5 core directory. Something like:  
+``ln -s /concrete5.6.1.3/concrete system``
 - Visit your new virtual host to install Concrete5
   - (you may need to create ``/files``, ``/packages``, and change permissions of C5-written directories)
   - You should now see the Concrete5 install screen!
@@ -54,18 +54,28 @@ root
 │   ├── helpers  
 │   ├── packages  
 │   ├── themes  
-│   │   ├──c5boilerplate  
+│   │   ├──boilerplate  
+│   │   │   ├──assets  
+│   │   │   │   ├──components  
+│   │   │   │   ├──css  
+│   │   │   │   ├──elements  
+│   │   │   │   ├──fonts  
+│   │   │   │   ├──img  
+│   │   │   │   ├──js  
 ├── src  
+│   ├── components  
 │   ├── js  
+│   │   ├──plugins  
 │   ├── scss  
+│   │   ├──mixins  
+│   │   ├──modules  
+│   │   ├──partials  
+│   │   ├──vendor  
 ````
 
 
 ## To Do:
 (See Github Issues)  
-
-- Grunt-copy .min files from Bower components?
-- [Consider](https://chrsm.org/2013/04/25/using-grunt-for-php/) grunt-php - or even better:
 - Put it in a Vagrant box!
 
 
