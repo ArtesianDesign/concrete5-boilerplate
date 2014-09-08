@@ -4,7 +4,7 @@
 
 @import 'mixins/_position.scss';
 @import 'mixins/_selection.scss';
-@import 'vendor/bootstrap/mixins'; // To use the full Bootstrap, change to 'vendor/bootstrap'
+@import '../components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins';
 
 //----------------------------------*\
 // CONFIG MODULES

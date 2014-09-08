@@ -196,8 +196,8 @@ module.exports = function (grunt) {
           banner: '<%= tag.banner %>'
         },
         files: {
-          '<%= project.assets %>/css/style.unprefixed.css': '<%= project.css %>',
-          '<%= project.themepath %>/typography.unprefixed.css': '<%= project.typographycss %>',
+          '<%= project.assets %>/css/style.min.css': '<%= project.css %>',
+          '<%= project.themepath %>/typography.css': '<%= project.typographycss %>',
           '<%= project.assets %>/css/concrete5-conflicts.min.css': '<%= project.conflictcss %>'
         }
       },
@@ -223,7 +223,7 @@ module.exports = function (grunt) {
         browsers: [
           'last 2 version',
           'safari 6',
-          'ie 9',
+          'ie 8',
           'opera 12.1',
           'ios 6',
           'android 4'
@@ -249,37 +249,14 @@ module.exports = function (grunt) {
      * https://github.com/gruntjs/grunt-contrib-cssmin
      */
     cssmin: {
-      dev: {
-        options: {
-          banner: '<%= tag.banner %>'
-        },
-        files: {
-          '<%= project.assets %>/css/style.min.css': [
-            '<%= project.src %>/components/normalize-css/normalize.css',
-            '<%= project.assets %>/css/style.unprefixed.css'
-          ],
-          '<%= project.themepath %>/typography.css': [
-            '<%= project.src %>/components/normalize-css/normalize.css',
-            '<%= project.themepath %>/typography.unprefixed.css'
-          ]
-        }
-      },
       dist: {
         options: {
           banner: '<%= tag.banner %>'
         },
         files: {
-          '<%= project.assets %>/css/style.min.css': [
-            '<%= project.src %>/components/normalize-css/normalize.css',
-            '<%= project.assets %>/css/style.prefixed.css'
-          ],
-          '<%= project.themepath %>/typography.css': [
-            '<%= project.src %>/components/normalize-css/normalize.css',
-            '<%= project.themepath %>/typography.prefixed.css'
-          ],
-          '<%= project.themepath %>/concrete5-conflicts.min.css': [
-            '<%= project.themepath %>/concrete5-conflicts.prefixed.css'
-          ]
+          '<%= project.assets %>/css/style.min.css': '<%= project.assets %>/css/style.prefixed.css',
+          '<%= project.themepath %>/typography.css': '<%= project.themepath %>/typography.prefixed.css',
+          '<%= project.themepath %>/concrete5-conflicts.min.css': '<%= project.themepath %>/concrete5-conflicts.prefixed.css'
         }
       }
     },
@@ -352,8 +329,6 @@ module.exports = function (grunt) {
   grunt.registerTask('default', [
     'sass:dev',
     'bower:dev',
-    'autoprefixer:dev',
-    'cssmin:dev',
     'jshint',
     'concat:dev',
     'phplint:all',

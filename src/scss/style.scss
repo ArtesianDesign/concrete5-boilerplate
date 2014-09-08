@@ -4,7 +4,7 @@
 
 @import 'mixins/_position.scss';
 @import 'mixins/_selection.scss';
-@import 'vendor/bootstrap/mixins'; // To use the full Bootstrap, change to 'vendor/bootstrap'
+@import '../components/bootstrap-sass-official/assets/stylesheets/bootstrap/mixins';
 
 //----------------------------------*\
 // CONFIG MODULES
@@ -12,6 +12,7 @@
 
 // Config modules
 @import 'modules/_variables.scss';
+@import 'vendor/normalize/normalize';
 @import 'modules/_clearfix.scss';
 @import 'modules/_defaults.scss';
 

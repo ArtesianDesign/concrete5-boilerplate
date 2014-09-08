@@ -1,7 +1,7 @@
 /*!
  * c5bp
  * Concrete5 Front-end Boilerplate
- * http://getfireshell.com
+ * http://concrete5.org
  * @author Daniel Peterson
  * @version 0.8.0
  * Copyright 2014. MIT licensed.
