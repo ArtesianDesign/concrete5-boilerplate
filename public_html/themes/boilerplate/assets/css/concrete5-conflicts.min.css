@@ -1,33 +1,43 @@
 /*!
- * c5bp
- * Concrete5 Front-end Boilerplate
- * http://concrete5.org
- * @author Daniel Peterson
+ * irp
+ * Integrity Rebar Placers
+ * http://integrityrebarplacers.com
+ * @author Artesian Design Inc
  * @version 0.8.0
  * Copyright 2014. MIT licensed.
  */
 
-#ccm-page-controls-wrapper,
-.ccm-ui,
-.ccm-ui input,
-.ccm-ui textarea,
-.ccm-ui select,
-.ccm-ui .uneditable-input {
+body #ccm-page-controls-wrapper,
+body .ccm-ui,
+body .ccm-ui input,
+body .ccm-ui textarea,
+body .ccm-ui select,
+body .ccm-ui .uneditable-input,
+body div.ccm-block {
   box-sizing: content-box !important;
 }
-
-.navbar.navbar-fixed-top {
+body .navbar.navbar-fixed-top {
   top: 49px !important;
+  z-index: 999;
 }
-
-#ccm-page-controls-wrapper {
+body #ccm-page-controls-wrapper {
   z-index: 1150;
+  box-sizing: content-box !important;
 }
-#ccm-page-controls-wrapper #ccm-toolbar,
-#ccm-page-controls-wrapper #ccm-intelligent-search-results,
-#ccm-page-controls-wrapper #ccm-dashboard-overlay,
-#ccm-page-controls-wrapper #ccm-edit-overlay {
+body #ccm-page-controls-wrapper #ccm-toolbar,
+body #ccm-page-controls-wrapper #ccm-intelligent-search-results,
+body #ccm-page-controls-wrapper #ccm-dashboard-overlay,
+body #ccm-page-controls-wrapper #ccm-edit-overlay {
   z-index: 1150;
+  box-sizing: content-box !important;
+}
+body #ccm-edit-overlay,
+body .ccm-edit-overlay-inner,
+body #ccm-edit-overlay-footer,
+body div#ui-widget-overlay,
+body div#ccm-highlighter {
+  z-index: 1150;
+  box-sizing: content-box !important;
 }
 
 /*# sourceMappingURL=concrete5-conflicts.min.css.map */

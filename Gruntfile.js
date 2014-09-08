@@ -249,6 +249,9 @@ module.exports = function (grunt) {
      * https://github.com/gruntjs/grunt-contrib-cssmin
      */
     cssmin: {
+      dev: {
+
+      },
       dist: {
         options: {
           banner: '<%= tag.banner %>'

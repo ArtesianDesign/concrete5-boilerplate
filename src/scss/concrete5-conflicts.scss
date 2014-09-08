@@ -20,27 +20,41 @@ $ccm-toolbar-height: 49px;
 // ----------------------------------
 // Fix Concrete5 conflicts:
 //
+body {
+  #ccm-page-controls-wrapper,
+  .ccm-ui,
+  .ccm-ui input,
+  .ccm-ui textarea,
+  .ccm-ui select,
+  .ccm-ui .uneditable-input,
+  div.ccm-block {
+    box-sizing: content-box !important;
+  }
 
-#ccm-page-controls-wrapper,
-.ccm-ui,
-.ccm-ui input,
-.ccm-ui textarea,
-.ccm-ui select,
-.ccm-ui .uneditable-input {
-  box-sizing: content-box !important;
-}
+  .navbar.navbar-fixed-top {
+    top: $ccm-toolbar-height !important;
+    z-index: $zindex-modal - 51;
+  }
 
-.navbar.navbar-fixed-top {
-  top: $ccm-toolbar-height !important;
-}
-
-#ccm-page-controls-wrapper {
-  z-index: $zindex-modal + 100;
-
-  #ccm-toolbar,
-  #ccm-intelligent-search-results,
-  #ccm-dashboard-overlay,
-  #ccm-edit-overlay {
+  #ccm-page-controls-wrapper {
     z-index: $zindex-modal + 100;
+    box-sizing: content-box !important;
+
+    #ccm-toolbar,
+    #ccm-intelligent-search-results,
+    #ccm-dashboard-overlay,
+    #ccm-edit-overlay {
+      z-index: $zindex-modal + 100;
+      box-sizing: content-box !important;
+    }
+  }
+
+  #ccm-edit-overlay,
+  .ccm-edit-overlay-inner,
+  #ccm-edit-overlay-footer,
+  div#ui-widget-overlay,
+  div#ccm-highlighter {
+    z-index: $zindex-modal + 100;
+    box-sizing: content-box !important;
   }
 }

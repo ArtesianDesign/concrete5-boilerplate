@@ -4,6 +4,6 @@
   "dependencies": {
     "modernizr": "~2.6.2",
     "jquery": "~1.10.2",
-    "bootstrap-sass-official": "~3.2.0"
+    "bootstrap-sass": "~3.0.2"
   }
 }

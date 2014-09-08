@@ -1,8 +1,8 @@
 /*!
- * c5bp
- * Concrete5 Front-end Boilerplate
- * http://concrete5.org
- * @author Daniel Peterson
+ * irp
+ * Integrity Rebar Placers
+ * http://integrityrebarplacers.com
+ * @author Artesian Design Inc
  * @version 0.8.0
  * Copyright 2014. MIT licensed.
  */
