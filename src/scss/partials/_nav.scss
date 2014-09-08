@@ -77,7 +77,7 @@ ul.nav {
     }
   }
 
-  .header {
+  &.header {
     height: $navbar-height;
 
     // Top-level Navigation - top-level only
@@ -187,59 +187,59 @@ ul.nav {
       border-left: 0;
       font-size: 15px;
     }
-  }
 
-  .navbar.header {
+    &.header {
 
-    // Top-level Navigation - top level only
-    ul.nav {
-      float: left;
-      height: $navbar-height;
-
-      > li {
-        display: inline-block;
+      // Top-level Navigation - top level only
+      ul.nav {
         float: left;
+        height: $navbar-height;
 
-        > a {
-          padding: $nav-link-padding;
-          border: 0;
+        > li {
+          display: inline-block;
+          float: left;
+
+          > a {
+            padding: $nav-link-padding;
+            border: 0;
+          }
         }
       }
-    }
 
-    &.header ul {
+      &.header ul {
 
-      li {
+        li {
 
-        &:hover {
+          &:hover {
 
-          // second level / dropdown
-          //
-          ul {
-            position: absolute;
-            top: 99.99%;
+            // second level / dropdown
+            //
+            ul {
+              position: absolute;
+              top: 99.99%;
 
-            li {
-              min-width: 10em;
+              li {
+                min-width: 10em;
 
-              &:hover {
-                background: darken($navbar-inverse-bg, 10%);
-              }
+                &:hover {
+                  background: darken($navbar-inverse-bg, 10%);
+                }
 
-              a {
-                padding: .5em 1em;
+                a {
+                  padding: .5em 1em;
+                }
               }
             }
           }
+
         }
-
       }
-    }
 
-    // hide mobile nav toggle for Tablet and up:
-    label,
-    input[type=checkbox] {
-      display: none;
+      // hide mobile nav toggle for Tablet and up:
+      label,
+      input[type=checkbox] {
+        display: none;
+      }
     }
   }
 
