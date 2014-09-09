@@ -206,32 +206,38 @@ ul.nav {
         }
       }
 
-      &.header ul {
+      &.header {
 
-        li {
+        .nav-wrapper {
+          float: left;
+        }
 
-          &:hover {
+        ul {
 
-            // second level / dropdown
-            //
-            ul {
-              position: absolute;
-              top: 99.99%;
+          li {
 
-              li {
-                min-width: 10em;
+            &:hover {
 
-                &:hover {
-                  background: darken($navbar-inverse-bg, 10%);
-                }
+              // second level / dropdown
+              //
+              ul {
+                position: absolute;
+                top: 99.99%;
 
-                a {
-                  padding: .5em 1em;
+                li {
+                  min-width: 10em;
+
+                  &:hover {
+                    background: darken($navbar-inverse-bg, 10%);
+                  }
+
+                  a {
+                    padding: .5em 1em;
+                  }
                 }
               }
             }
           }
-
         }
       }
 

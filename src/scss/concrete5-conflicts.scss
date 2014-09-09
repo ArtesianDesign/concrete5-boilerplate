@@ -21,19 +21,28 @@ $ccm-toolbar-height: 49px;
 // Fix Concrete5 conflicts:
 //
 body {
+
+  #page-content {
+    margin-top: $ccm-toolbar-height;
+  }
+
+  .navbar {
+    &.navbar-fixed-top {
+      top: $ccm-toolbar-height !important;
+      z-index: $zindex-modal - 51;
+    }
+  }
+
+
   #ccm-page-controls-wrapper,
   .ccm-ui,
   .ccm-ui input,
   .ccm-ui textarea,
   .ccm-ui select,
   .ccm-ui .uneditable-input,
-  div.ccm-block {
+  div.ccm-block,
+  div.ccm-area {
     box-sizing: content-box !important;
-  }
-
-  .navbar.navbar-fixed-top {
-    top: $ccm-toolbar-height !important;
-    z-index: $zindex-modal - 51;
   }
 
   #ccm-page-controls-wrapper {

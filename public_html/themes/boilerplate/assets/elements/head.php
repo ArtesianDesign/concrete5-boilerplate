@@ -4,6 +4,7 @@ $th = Loader::helper('text');
 
 $page_handle = ($pt = $c->getCollectionTypeHandle()) ? $pt : 'view';
 $page_name = $th->urlify($c->getCollectionName());
+$edit_class = ($c->isEditMode() ? 'edit-mode' : null);
 
 ?><!doctype html>
 <html class="no-js">
@@ -30,4 +31,4 @@ $page_name = $th->urlify($c->getCollectionName());
 
 </head>
 
-<body class="pt-<?php echo $page_handle; ?> <?php echo $page_name; ?>">
+<body class="pt-<?php echo $page_handle . ' ' . $page_name . ' ' . $edit_class; ?>">
